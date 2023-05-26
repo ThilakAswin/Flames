@@ -1,20 +1,26 @@
-function calculate(){
-    
-    var index = Math.floor(Math.random() * 6);
-    
-    const str = ["Friends", "Love" , "Affection", "Marraige" , "Enemy" , "Sister"];
-
-    if(document.querySelector("input").value === "")
-    {
-        document.querySelector("h2").innerHTML = "Please provide a valid names";
+function flames() {
+    const name1 = document.getElementById("yourname").value.toLowerCase().replace(/\s/g, '');
+    const name2 = document.getElementById("crushname").value.toLowerCase().replace(/\s/g, '');
+  
+    // Calculate the count of unique characters in both names
+    const uniqueChars = new Set(name1 + name2);
+    const totalCount = uniqueChars.size;
+  
+    // Define the FLAMES relationships
+    const relationships = ['Friends', 'Love', 'Affection', 'Marriage', 'Enemy', 'Sister'];
+  
+    let count = 0;
+  
+    // Calculate the remaining count after each relationship iteration
+    for (let char of uniqueChars) {
+      count += (name1.split(char).length - 1) + (name2.split(char).length - 1);
     }
-
-    else
-    {
-    
-    document.querySelector("h2").innerHTML = str[index];
-
-    }
-    document.querySelector("h2").style.color = "red";
-    
-}
+  
+    // Determine the relationship based on the count
+    const relationshipIndex = (count % relationships.length) - 1;
+    const result = relationshipIndex >= 0 ? relationships[relationshipIndex] : relationships[relationships.length - 1];
+  
+    // Display the result
+    // document.getElementById("result").textContent = result;
+    document.querySelector("h2").innerHTML = result;
+  }
