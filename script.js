@@ -1,7 +1,7 @@
 function flames() {
     const name1 = document.getElementById("yourname").value.toLowerCase().replace(/\s/g, '');
     const name2 = document.getElementById("crushname").value.toLowerCase().replace(/\s/g, '');
-    
+    alert(name1);
     if(name1 ==  "" || name2 == "" )
     {
         document.querySelector("h2").innerHTML = "Please fill the required fields";
