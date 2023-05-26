@@ -15,7 +15,7 @@ function flames() {
     const totalCount = uniqueChars.size;
   
     // Define the FLAMES relationships
-    const relationships = ['Friends', 'Love', 'Affection', 'Marriage', 'Enemy', 'Sister'];
+    const relationships = ['Friends', 'Love', 'Affection', 'Marriage', 'Enemy', 'Brother/Sister'];
   
     let count = 0;
   
